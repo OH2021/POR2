@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="dark">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Haug Webpartner</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="hero-badge">Welcome</span>
+          <h1>Welcome to my portfolio</h1>
+          <p class="lead">
+            This site showcases selected projects I’ve worked on, focusing on
+            clean design, performance and user experience.
+          </p>
+        </div>
+      </section>
+
+      <section class="container portfolio">
+        <div class="grid">
+          <a href="portfolio.html" class="card portfolio-item">
+            <figure>
+              <figcaption>
+                <strong>View my work</strong>
+                <p>
+                  Explore real projects and see how I build modern, responsive
+                  websites and web solutions.
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> My Portfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

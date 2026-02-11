@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — My Projects</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="dark">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Haug Webpartner</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="hero-badge">My projects</span>
+          <h1>Portfolio</h1>
+          <p class="lead">
+            Prosjekter som viser hvordan vi jobber med design, ytelse og
+            konvertering.
+          </p>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO GRID -->
+      <section class="container portfolio">
+        <div class="grid">
+          <a
+            href="https://pe2holidaze2026.netlify.app/"
+            target="_blank"
+            class="portfolio-item card"
+          >
+            <figure>
+              <img src="images/holidaze_booking_side.png" alt="Project 1" />
+              <figcaption>
+                <strong>Holidaze sin Bookingside - Prosjekt</strong>
+                <p>
+                  Bookingside for lokaler med komplett bruker‑ og
+                  adminfunksjonalitet — registrering, booking og
+                  venue‑administrasjon.
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+
+          <a
+            href="https://gjmaskin.no/"
+            target="_blank"
+            class="portfolio-item card"
+          >
+            <figure>
+              <img
+                src="images/gjestrumbakken_maskindrift_AS.png"
+                alt="Project 2"
+              />
+              <figcaption>
+                <strong>Gjestrumbakken Maskindrift AS</strong>
+                <p>
+                  Informasjons‑ og presentasjonsside for et lokalt maskin‑ og
+                  anleggsfirma med fokus på robust arbeid og maskinpark.
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+
+          <a
+            href="https://totentjenester.no/"
+            target="_blank"
+            class="portfolio-item card"
+          >
+            <figure>
+              <img
+                src="images/toten_anlegg_og_servicetjenester_AS.png"
+                alt="Project 3"
+              />
+              <figcaption>
+                <strong>Toten Anlegg og Servicetjenester AS</strong>
+                <p>
+                  Bedriftsnettside for et anlegg‑ og servicefirma som informerer
+                  om tjenester og gir kundene enkel kontaktmulighet.
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> My Portfolio</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
