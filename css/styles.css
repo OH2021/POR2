@@ -1,5 +1,5 @@
 /* =========================
-   CSS RESET + VARIABLES
+   RESET + VARIABLES
 ========================= */
 *,
 *::before,
@@ -15,24 +15,26 @@ body {
 }
 
 :root {
-  --bg-dark: #0f172a;
-  --bg-dark-2: #020617;
-  --card-bg: #020617;
+  --bg: #0f172a;
+  --bg-2: #020617;
+  --card: #0b1220;
   --text: #e5e7eb;
   --muted: #9ca3af;
   --accent: #38bdf8;
-  --accent-soft: rgba(56, 189, 248, 0.15);
   --border: #1e293b;
-  --radius: 14px;
+  --radius: 16px;
   --max-width: 1200px;
-  --transition: 0.3s ease;
+  --transition: 0.25s ease;
 }
 
+/* =========================
+   BODY LAYOUT
+========================= */
 body.dark {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-2));
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
   color: var(--text);
   font-family:
     system-ui,
@@ -43,17 +45,8 @@ body.dark {
   line-height: 1.6;
 }
 
-/* =========================
-   GENERAL STYLES
-========================= */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-  display: block;
+main {
+  flex: 1;
 }
 
 .container {
@@ -63,40 +56,41 @@ img {
 }
 
 /* =========================
-   HEADER / NAV
+   HEADER
 ========================= */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
   background: rgba(2, 6, 23, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   min-height: 70px;
 }
 
 .logo {
-  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  font-size: 1.2rem;
+  color: var(--text);
+  cursor: default; /* no hover link effect */
 }
 
 .site-nav ul {
   display: flex;
-  gap: 1.5rem;
   list-style: none;
+  gap: 1.5rem;
 }
 
 .site-nav a {
-  font-size: 0.95rem;
   color: var(--muted);
-  transition: color var(--transition);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 .site-nav a:hover,
@@ -114,13 +108,6 @@ img {
 }
 
 /* =========================
-   MAIN
-========================= */
-main {
-  flex: 1;
-}
-
-/* =========================
    HERO
 ========================= */
 .hero {
@@ -133,40 +120,44 @@ main {
 
 .hero-badge {
   display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.75rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
-  background: var(--accent-soft);
+  background: rgba(56, 189, 248, 0.15);
   color: var(--accent);
+  font-size: 0.8rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  margin-bottom: 0.75rem;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
 }
 
-.hero .lead {
-  font-size: 1.05rem;
+.lead {
   color: var(--muted);
+  max-width: 650px;
+  line-height: 1.8;
 }
 
 /* =========================
    PORTFOLIO GRID
 ========================= */
 .portfolio {
-  padding: 3rem 0 5rem;
+  padding: 4rem 0 6rem;
 }
 
 .grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+/* =========================
+   CARD
+========================= */
 .card {
-  background: linear-gradient(180deg, #020617, #020617cc);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -180,31 +171,89 @@ main {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.portfolio-item figure {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio-item img {
-  aspect-ratio: 16 / 9;
+.card img {
+  width: 100%;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-bottom: 1px solid var(--border);
 }
 
-.portfolio-item figcaption {
-  padding: 1.25rem;
+.card-content {
+  padding: 1.8rem;
+}
+
+.card-content h3 {
+  margin-bottom: 0.8rem;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* =========================
+   VIEW MY WORK CARD
+========================= */
+.portfolio-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 3rem 2rem;
 }
 
 .portfolio-item strong {
+  font-size: 2rem;
   display: block;
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 .portfolio-item p {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.8;
   color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.project-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #020617;
+  border-color: var(--accent);
+}
+
+.btn.primary:hover {
+  opacity: 0.9;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* =========================
@@ -223,7 +272,7 @@ main {
 }
 
 /* =========================
-   MOBIL NAV
+   RESPONSIVE / MOBILE MENU
 ========================= */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -237,16 +286,25 @@ main {
     right: 0;
     background: #020617;
     border-bottom: 1px solid var(--border);
-    display: none;
+    z-index: 90;
   }
 
   .site-nav ul {
     flex-direction: column;
-    padding: 1rem;
     gap: 1rem;
+    display: none; /* hidden by default */
+    padding: 1rem;
   }
 
-  .site-nav.open {
-    display: block;
+  .site-nav.open ul {
+    display: flex; /* show when open */
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 4rem 0 2rem;
   }
 }
