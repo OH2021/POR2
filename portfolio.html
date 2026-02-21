@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | My Projects</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="dark">
+    <header class="site-header">
+      <div class="container header-inner">
+        <span class="logo">Portfolio Website</span>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <span class="hero-badge">My Work</span>
+          <h1>Portfolio</h1>
+          <p class="lead">Here are three of my projects that I've worked on.</p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="container portfolio">
+        <div class="grid">
+          <!-- Project 1 -->
+          <article class="card">
+            <img
+              src="images/holidaze_booking_side.png"
+              alt="Holidaze project preview"
+            />
+            <div class="card-content">
+              <h3>Project Exam 2 – Holidaze</h3>
+              <p>
+                A full booking platform where users can register, book venues,
+                and venue managers can create, update and manage listings.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://pe2holidaze2026.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn primary"
+                >
+                  Live Site
+                </a>
+                <a
+                  href="https://github.com/OH2021/Project-Exam-Holidaze.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn secondary"
+                >
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <img
+              src="images/front-end-frameworks-CA.png"
+              alt="Ecommerce project preview"
+            />
+            <div class="card-content">
+              <h3>JavaScript Frameworks CA</h3>
+              <p>
+                An ecommerce website displaying products with dynamic routing,
+                product detail pages, and cart functionality.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://front-end-frameworks-ca.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn primary"
+                >
+                  Live Site
+                </a>
+                <a
+                  href="https://github.com/OH2021/Front-End-Framworks-CA.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn secondary"
+                >
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <img
+              src="images/semester-project2.png"
+              alt="Auction website preview"
+            />
+            <div class="card-content">
+              <h3>Semester Project 2</h3>
+              <p>
+                An auction platform where users can register, update avatars,
+                view listings, and place bids in real time.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://cerulean-bublanina-200451.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn primary"
+                >
+                  Live Site
+                </a>
+                <a
+                  href="https://github.com/OH2021/Semester-Project-2.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn secondary"
+                >
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> My Portfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
